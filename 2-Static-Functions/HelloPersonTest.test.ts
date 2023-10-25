@@ -14,6 +14,6 @@ describe('HelloPerson test',()=>{
 
         // Call HelloPerson class, which should use our mocked getInstance method, and return hello Annika
         const helloAnnika = HelloPerson.sayHelloAnnika();
-        expect(helloAnnika).toEqual('Hello, Annika!');
+        expect(helloAnnika).toEqual("Hello, " + `${mockAnnika.nickname}!`);
     });
 })
