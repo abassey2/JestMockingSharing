@@ -38,3 +38,5 @@ Or if you are using VSCode, utilize the [Jest Runner Extension](https://marketpl
 - [1-Mocking-Instances-Of-Classes](./1-Mocking-Instances-Of-Classes/README.md)
 - [2-Static-Functions](./2-Static-Functions/README.md)
 - [3-Testing-With-Environment-Vars](./3-Testing-With-Environment-Vars/README.md)
+- [4-Mocking-NPM-Libraries](./4-Mocking-NPM-Libraries/README.md)
+    
