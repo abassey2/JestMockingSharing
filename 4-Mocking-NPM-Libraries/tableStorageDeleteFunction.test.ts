@@ -38,7 +38,7 @@ describe('tableStorageDeleteFunction Tests', () => {
         const context = await functionRunner(httpTrigger, fnBindingDefinitions, { req: reqBinding });
         const httpResponse = context.res;
 
-        // assert 'alert deleted' http response
+        // assert on response 
         expect(httpResponse).toBeDefined();
         expect(httpResponse.status).toBe(200);
         expect(httpResponse.body).toBe('Deleted entity');
