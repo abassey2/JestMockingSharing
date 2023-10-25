@@ -10,7 +10,7 @@ By using the `jest.mock()` method, we can specify the library to mock and add th
 ## Code Walkthrough
 
 Because TypeScript Azure Functions don't come with a Dependency Injection framework out of the box, in the `tableStorageDeleteFunction.ts` file, our basic Azure Function must "new up" a `TableClient` inline.
-In order to mock this class from the `@azure/functions` library, we set up the mock of `TableClient`
+In order to mock this class from the `@azure/data-tables` library, we set up the mock of `TableClient`
 and `AzureNamedKeyCredential` at the top of the test file:
 
 ```ts
