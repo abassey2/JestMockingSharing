@@ -1,4 +1,4 @@
-# README
+# Jest Mocking
 
 ## Introduction
 
