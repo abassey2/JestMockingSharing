@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@azure/data-tables": "^13.2.2",
-    "@azure/functions": "3.5.1"
+    "@azure/functions": "3.5.1",
+    "stub-azure-function-context": "^2.4.1"
   }
 }
