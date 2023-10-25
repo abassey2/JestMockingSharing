@@ -29,11 +29,11 @@ jest.mock('@azure/data-tables', () => ({
 }));
 ```
 
-In this manner, we can mock the way `AzureNamedKeyCredential` and `TableClient` are constructed.
+In this manner, we can mock the way `AzureNamedKeyCredential` and `TableClient` are constructed in our code.
 We can make sure we can also make assertions on how many times the `deleteEntity` function is called on the "newed up" `TableClient` by making its implementation a jest function (`jest.fn()`):
 
 ```ts
 expect(mockedDeleteEntity).toBeCalled();
 ```
 
-Now, using some helper methods provided by the Azure Functions library, we can run our `httpTrigger` function (the Azure Function) in tests and the specified mocks will be used when `@azure/data-tables` dependencies are called upon.
+Now, using some helper methods provided by the `stub-azure-function-context` npm package, we can run our `httpTrigger` function (the Azure Function) in tests and the specified mocks will be used instead of the real implementation when `@azure/data-tables` dependencies are called upon.
