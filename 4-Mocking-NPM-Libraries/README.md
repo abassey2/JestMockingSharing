@@ -1,4 +1,4 @@
-# Mocking Node Libraries
+# Mocking NPM Libraries
 
 ## Introduction
 
