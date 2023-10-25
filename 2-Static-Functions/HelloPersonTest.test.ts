@@ -2,7 +2,7 @@ import { PersonFactory } from "./PersonFactory";
 import { HelloPerson } from "./HelloPerson";
 
 describe('HelloPerson test',()=>{
-    it('HelloPerson should return hello Annika ', () => {
+    it('sayHelloAnnika method should return hello Annika ', () => {
 
         // Spyon our Factory class and mock the getInstance method
         const mockAnnika = {
