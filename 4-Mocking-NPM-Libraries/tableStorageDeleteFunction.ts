@@ -6,7 +6,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 
   // any validation can take place here
 
-  const stockSymbol = '' // blank for simplicity but would normally be read from body of request
+  const entityName = '' // blank for simplicity but would normally be read from body of request
   const rowKey = '' // blank for simplicity but would normally be constructed via variety of request inputs
 
   const config = {
@@ -25,7 +25,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
   let responseMessage: string;
 
   try {
-    await tableClient.deleteEntity(stockSymbol, rowKey); //stockSymbol is partition key
+    await tableClient.deleteEntity(entityName, rowKey); //stockSymbol is partition key
     responseMessage = `Deleted entity`;
     context.log(responseMessage);
   } catch {
