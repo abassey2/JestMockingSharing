@@ -4,9 +4,8 @@ import { TableClient, AzureNamedKeyCredential } from '@azure/data-tables';
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
   context.log('JavaScript HTTP trigger function processed a request: ' + JSON.stringify(req.body));
 
-  // validation
+  // any validation can take place here
 
-  // change
   const stockSymbol = '' // blank for simplicity but would normally be read from body of request
   const rowKey = '' // blank for simplicity but would normally be constructed via variety of request inputs
 
