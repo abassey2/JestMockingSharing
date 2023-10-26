@@ -8,28 +8,27 @@ Mocking static functions also allows us to control the behavior and responses of
 
 One Common scenario where we may need to mock a static function is when we use the Factory Method to create a new object.
 In this case, we want to mock our static get instance function within our Factory class.
-We use the [jest.spyon()](https://jestjs.io/docs/jest-object#jestspyonobject-methodname) function and the `.mockImplementation()` method to
+We use the [jest.spyon()](https://jestjs.io/docs/jest-object#jestspyonobject-methodname) function and the `.mockReturnValue()` method to
 overwrite our original Factory method and return a mocked object.
 
 ## Code Walkthrough
 
-Since our getInstance method within the [PersonFactory](./PersonFactory.ts) returns a Person object, we must first mock our returned person and the `getInstance` function to return that object.
-Then we can use the `jest.spyon()` function on the PersonFactory so that the class's getInstance method will be overwritten with our mock function.
+Since our getInstance method within the [PersonFactory](./PersonFactory.ts) returns a Person object, we must first mock our returned person.
+Then we can use the `jest.spyon()` function on the PersonFactory so that the class's getInstance method will be overwritten to return our mocked person object.
 
 ```ts
 const mockAnnika = {
     nickname: 'Annika',
     age: 22
 };
-const mockGetInstance = () =>  mockAnnika;
-jest.spyOn(PersonFactory, 'getInstance').mockImplementation(mockGetInstance);
+jest.spyOn(PersonFactory, 'getInstance').mockReturnValue(mockAnnika);
 ```
 
 Finally, we can call static function, `sayHelloAnnika()`, within our [HelloPerson](./HelloPerson.ts) class and expect the returned message to be a simple hello to our mocked Person.
 
 ```ts
 const returnedHelloAnnika = HelloPerson.sayHelloAnnika();
-expect(returnedHelloAnnika).toEqual('Hello, Annika!');
+        expect(helloAnnika).toEqual("Hello, " + `${mockAnnika.nickname}!`);
 ```
 
 ## Running the tests
